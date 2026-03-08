@@ -16,7 +16,7 @@ print(greet)
 
 def add_car():
     make: str = input('Enter car make: ')
-    model: str = input('Enter car mode: ')
+    model: str = input('Enter car model: ')
 
     while True:
         try:
@@ -27,7 +27,7 @@ def add_car():
 
     added_car: dict = {'make': make, 'model': model, 'year': year}
     cars.append(added_car)    
-    #return added_car
+   
 
 while True:
     selection: str = input('Would you like to enter a new car? Select "y" or "n": ')
@@ -44,5 +44,4 @@ while True:
         print(cars)
         break
 
-# General plan for the build create a list of dictionaries, each dict in the list will be a new car, insert new cars in the dictionary
 
