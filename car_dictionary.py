@@ -20,8 +20,10 @@ def add_car():
             break
         except: ValueError
         print ('Enter an integer!\n')
-    
-    return make, model, year
+
+    added_car: dict = {'make': make, 'model': model, 'year': year}    
+    return added_car
+
 
 
 #cars is a list of dictionaries. each dictionary element in the cars list is an individual car. 
@@ -39,7 +41,9 @@ while True:
 
 if selection == 'y':
     add_car()
-    # append cars list here: 
+    cars.append(add_car)
+    for added_car in cars:
+        print(added_car)
 else:
     print(exit)
 
