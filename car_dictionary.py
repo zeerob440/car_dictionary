@@ -10,6 +10,10 @@
 # declarations 
 greet: str = 'Welcome to car_dictionary!\n'
 exit: str = 'Exiting program!\n'
+#cars is a list of dictionaries. each dictionary element in the cars list is an individual car. 
+cars: list = []
+print(greet)
+
 def add_car():
     make: str = input('Enter car make: ')
     model: str = input('Enter car mode: ')
@@ -21,39 +25,24 @@ def add_car():
         except: ValueError
         print ('Enter an integer!\n')
 
-    added_car: dict = {'make': make, 'model': model, 'year': year}    
-    return added_car
-
-
-
-#cars is a list of dictionaries. each dictionary element in the cars list is an individual car. 
-cars: list = []
-print(greet)
+    added_car: dict = {'make': make, 'model': model, 'year': year}
+    cars.append(added_car)    
+    #return added_car
 
 while True:
     selection: str = input('Would you like to enter a new car? Select "y" or "n": ')
     #selection =  selection.lower()
     if selection.lower() == 'y' or selection.lower() == 'n':
         print('user input validated')
-        break
     else:
          print('Enter y or n')
 
-if selection == 'y':
-    add_car()
-    cars.append(add_car)
-    for added_car in cars:
-        print(added_car)
-else:
-    print(exit)
+    if selection == 'y':
+        add_car()
+    else:
+        print(exit)
+        print(cars)
+        break
 
-
-
-
-
-          
-
-
-
-#General plan for the build create a list of dictionaries, each dict in the list will be a new car, insert new cars in the dictionary
+# General plan for the build create a list of dictionaries, each dict in the list will be a new car, insert new cars in the dictionary
 
